@@ -53,14 +53,11 @@ function FormData()
             if mime and not filename then
                 -- Gotta figure out what our params are
                 local isMime = string.find( mime, "/", 1, false ) ~= nil
-                print( mime, filename, isMime )
 
                 if not isMime then
                     -- mime is actually the filename
                     filename = mime
                     mime = getMimeType( filename )
-
-                    print( filename, mime )
                 end
             end
 
