@@ -58,8 +58,7 @@ function FormData()
                 if not isMime then
                     -- mime is actually the filename
                     filename = mime
-                    mime = "application/octet-stream"
-                    -- getMimeType( filename )
+                    mime = getMimeType( filename )
 
                     print( filename, mime )
                 end
