@@ -14,12 +14,10 @@ form:Append( "files[0]", fileData, "image.png" )
 HTTP( {
     method = "POST",
     url = "https://discord.com/api/webhooks/blah/blah",
-    headers = {
-        ["Content-Type"] = table.Add(
-            form:GetHeaders(),
-            { ["User-Agent"] = "GmodIntegration v1.0" }
-        )
-    },
+    headers = table.Merge(
+        formData:GetHeaders(),
+        { ["User-Agent"] = "MySender v1" }
+    ),
     body = form:Read(),
     success = function() end,
     failed = function() end
